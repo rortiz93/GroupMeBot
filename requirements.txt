@@ -3,3 +3,4 @@ beautifulsoup4
 requests==2.3.0
 Pillow==2.5.3
 GroupyAPI
+groupy 0.7.1
