@@ -7,14 +7,14 @@ import GroupMeBot
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 full_text = ''
 app = Flask(__name__)
 
 app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
-
+  return render_template('index.html')
   # We don't want to reply to ourselves!
   if data['name'] != 'bitch nutz':
     msg = '{}, you sent "{}".'.format(data['name'], data['text'])
