@@ -27,6 +27,9 @@ for bot in Bot.list():
 
 #testBot.post("test")
 
+def send_message(full_text):
+    full_text = GetScores.get_matchup_score(full_text, league_id, season_id, league_size)
+    testBot.post(full_text)
 
 
 full_text = GetScores.get_matchup_score(full_text, league_id, season_id, league_size)

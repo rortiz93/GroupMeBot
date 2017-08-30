@@ -1,15 +1,20 @@
-import asyncio
-import websockets
+import os
+import json
+import GroupMeBot
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
-async def hello(websocket, path):
-    name = await websocket.recv()
-    print("< {}".format(name))
+from flask import Flask, request
+full_text = ''
+app = Flask(__name__)
 
-    greeting = "Hello {}!".format(name)
-    await websocket.send(greeting)
-    print("> {}".format(greeting))
+app.route('/', methods=['POST'])
+def webhook():
+  data = request.get_json()
 
-start_server = websockets.serve(hello, 'localhost', 8765)
+  # We don't want to reply to ourselves!
+  if data['name'] != 'bitch nutz':
+    msg = '{}, you sent "{}".'.format(data['name'], data['text'])
+    GroupMeBot.send_message(full_text)
 
-asyncio.get_event_loop().run_until_complete(start_server)
-asyncio.get_event_loop().run_forever()
+  return "ok", 200
