@@ -1,6 +1,7 @@
 import GetScores
 from groupy import Group, Bot
 
+
 # list of my GroupMe groups
 groups = Group.list()
 
