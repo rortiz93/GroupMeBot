@@ -11,7 +11,7 @@ from flask import Flask, request
 full_text = ''
 app = Flask(__name__)
 
-app.route('https://salty-dawn-83243.herokuapp.com/', methods=['POST'])
+app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
 
@@ -37,3 +37,6 @@ def send_message(msg):
 def log(msg):
     print(str(msg))
     sys.stdout.flush()
+
+if __name__ == '__main__':
+    app.run()
