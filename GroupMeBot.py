@@ -1,11 +1,14 @@
 import GetScores
+import os
 from groupy import Group, Bot
 
 
 # list of my GroupMe groups
 groups = Group.list()
 
-botId = 'c3ff35c4f554a9fa8525878d15'
+#botId = 'c3ff35c4f554a9fa8525878d15'
+botId = os.getenv('botId')
+print(botId)
 groupId = '33275265'
 full_text = ''
 league_id = '458388'
