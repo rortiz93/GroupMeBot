@@ -1,1 +1,1 @@
-worker: python Listener.py
+web: gunicorn Listener:app --log-file=-
