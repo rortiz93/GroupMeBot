@@ -14,11 +14,12 @@ app = Flask(__name__)
 app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
-  return render_template('index.html')
+  print("x")
+  GroupMeBot.send_message(full_text)
   # We don't want to reply to ourselves!
   if data['name'] != 'bitch nutz':
     msg = '{}, you sent "{}".'.format(data['name'], data['text'])
-    send_message(msg)
+    GroupMeBot.send_message(full_text)
 
   return "ok", 200
 
