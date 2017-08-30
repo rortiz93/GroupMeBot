@@ -6,7 +6,7 @@ from groupy import Group, Bot
 # list of my GroupMe groups
 groups = Group.list()
 
-#botId = 'c3ff35c4f554a9fa8525878d15'
+
 botId = os.getenv('botId')
 print(botId)
 groupId = '33275265'
@@ -35,7 +35,7 @@ def send_message(full_text):
     testBot.post(full_text)
 
 
-full_text = GetScores.get_matchup_score(full_text, league_id, season_id, league_size)
-testBot.post(full_text)
+#full_text = GetScores.get_matchup_score(full_text, league_id, season_id, league_size)
+#testBot.post(full_text)
 
 
