@@ -40,3 +40,5 @@ Commands:
 '/topfa k' - posts the top 10 Ks Free Agent in your ESPN Fantasy Football with PPR scoring
 
 '/topfa flex' - posts the top 10 Free Agent Flex players in your ESPN Fantasy Football with PPR scoring
+
+/nflmatchups today - posts today's nfl matchups 
